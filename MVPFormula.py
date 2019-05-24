@@ -57,22 +57,22 @@ def getTmWins(team):
 
 
 # Scrape team wins and add to dictionary
-# seen = set()
-# winDict = {}
-# for team in stats['Tm']:
-#     if team in seen or team == 'TOT':
-#         pass
-#     else:
-#         print(team)
-#         print(seen)
-#         winDict[team] = getTmWins(team)
-#         seen.add(team)
-# print(winDict)
+seen = set()
+winDict = {}
+for team in stats['Tm']:
+    if team in seen or team == 'TOT':
+        pass
+    else:
+        print(team)
+        print(seen)
+        winDict[team] = getTmWins(team)
+        seen.add(team)
+print(winDict)
 
 # hardcoded team wins to save time and page requests
-winDict = {'OKC': 49, 'PHO': 19, 'ATL': 29, 'MIA': 39, 'CLE': 19, 'DEN': 54, 'SAS': 48, 'CHI': 22, 'UTA': 50, 'BRK': 42,
-           'NYK': 17, 'POR': 53, 'MEM': 33, 'IND': 48, 'MIL': 60, 'DAL': 33, 'HOU': 53, 'TOR': 58, 'WAS': 32, 'ORL': 42,
-           'CHO': 39, 'SAC': 39, 'LAL': 37, 'MIN': 36, 'BOS': 49, 'GSW': 57, 'NOP': 33, 'LAC': 48, 'PHI': 51, 'DET': 41}
+# winDict = {'OKC': 49, 'PHO': 19, 'ATL': 29, 'MIA': 39, 'CLE': 19, 'DEN': 54, 'SAS': 48, 'CHI': 22, 'UTA': 50, 'BRK': 42,
+#           'NYK': 17, 'POR': 53, 'MEM': 33, 'IND': 48, 'MIL': 60, 'DAL': 33, 'HOU': 53, 'TOR': 58, 'WAS': 32, 'ORL': 42,
+#           'CHO': 39, 'SAC': 39, 'LAL': 37, 'MIN': 36, 'BOS': 49, 'GSW': 57, 'NOP': 33, 'LAC': 48, 'PHI': 51, 'DET': 41}
 # Scrape Advanced stats
 advancedStats = getDF(advanced)
 # Scrape Regular Season Totals
