@@ -11,6 +11,7 @@ advanced = "https://www.basketball-reference.com/leagues/NBA_{}_advanced.html".f
 
 
 def getDF(url):
+    # create pandas dataframe from data on basketball-refernce.com
     html = urlopen(url)
 
     soup = BeautifulSoup(html, features="lxml")
@@ -30,6 +31,7 @@ def getDF(url):
 
 
 def cleanColumns(df):
+    # adjust datatypes of columns to make data easier to use
     for x in df:
         # if x!='\xa0':
         if x.endswith('%') or x in ['PER', 'OWS', 'DWS', 'WS', 'WS/48', 'OBPM', 'DBPM', 'BPM', 'VORP', 'FTr', '3PAr']:
@@ -45,6 +47,7 @@ def cleanColumns(df):
 
 
 def getTmWins(team):
+    # find teams total wins based on how it is stored in the individual statistic tables
     url = r'https://www.basketball-reference.com/teams/{}/{}.html'.format(team, year)
     html = urlopen(url)
 
